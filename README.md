@@ -12,3 +12,21 @@ Streaming analytics can be a difficult to set up, especially when working with l
 [Pluralsight](pluralsight.com/)
 
 ### Notes
+
+#### Install Pyspark
+- `pip install pyspark`
+- if jav anot installed: 
+  - `sudo apt install default-jre`
+  - `export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))`
+  
+#### Blood samples
+- Run server to generate blood samples: `python3 server1.py`
+- Run select.py to get these blood samples, filter negative bloodGlucose ones and print to console: `python3 selecet.py`
+
+#### Group and Agg
+- samples increasing and decreasing values: `python3 server2.py`
+- Run avarage.py to group increasing and decreasing values by it kind and by event time, every 30s is a new group: `python3 avarage.py`
+
+#### Watermark
+- samples: `python3 server3`
+- through away everithing older than 1 hour: `python3 watermark.py`
